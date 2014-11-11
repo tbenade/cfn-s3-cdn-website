@@ -9,8 +9,8 @@ class CloudProducer
   attr_reader :region
 
   def initialize(params = {})
-    @region = params.fetch(:region, 'ap-souteast-2')
-    @cfn = AWS::CloudFormation.new(:region => 'ap-southeast-2')
+    @region = params.fetch(:region, 'ap-southeast-2')
+    @cfn = AWS::CloudFormation.new(:region => @region)
   end
 
   def parse_template template_path
